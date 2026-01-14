@@ -27,4 +27,4 @@ jobs:
       run: dotnet pack --configuration Release --no-build --output nupkgs ./Wom.Net/Wom.Net.csproj
 
     - name: Push to NuGet
-      run: dotnet nuget push ./nupkgs/*.nupkg --api-key ${{ secrets.NUGET_SECRET }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ./nupkgs/*.nupkg --api-key ${{ secrets.NUGET_SECRET }} --source https://api.nuget.org/v3/index.json -p:PackageID=BeeHiveWomNet
